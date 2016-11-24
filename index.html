@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="player" manifest="index.appcache">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>音乐播放器</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/basic.css">
+
+<!-- [if lt IE 9]>
+  <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="iphone" ng-controller="iphoneCtrl">
+<div class="warp">
+  <div id="hello" class="hello active">
+    <div class="logo"><img class="img-responsive" src="img/i/axf.png" alt=""/></div>
+    <audio src="img/o/aa.mp3" autoplay></audio>
+  </div>
+  <div class="hidden-sm hidden-xs status"><img class="" src="img/top.png" alt=""/></div>
+  <div id="content" class="container content" ng-view ng-click="settingClose($event)">
+
+  </div>
+  <div id="setting" class="setting">
+    <!-- <span><img class="img-responsive" src="img/i/eai.png" alt=""/></span>-->
+    <div class="setting-top"><a class="login" href="login.html">登录/注册</a></div>
+    <div class="setting-mid">
+      <ul>
+        <li><a href=""><i><img class="img-responsive" src="img/i/eal.png" alt=""/></i>消息中心</a></li>
+        <li><a href=""><i><img class="img-responsive" src="img/i/eam.png" alt=""/></i>定时关闭</a></li>
+        <li><a><i><img class="img-responsive" src="img/i/f1r.png" alt=""/></i>启动问候音</a><span class="hellokg"><em></em></span></li>
+      </ul>
+    </div>
+    <div class="setting-bottom"><a href=""><i class=""></i> 设置</a></div>
+  </div>
+
+  <audio id="myMusic" src=""></audio>
+</div>
+</div>
+<p class="text-center visible-md visible-lg" style="color:rgba(0,0,0,.5);">本站已迁移到<a href="http://listener.esy.es">listener.esy.es</a>这个域名<br>本站纯属个人娱乐网站，部分功能还在完善中，如有问题请联系<a style="color:rgba(0,0,0,.5);text-shadow: none;" href="mailto:499906898@qq.com">管理员</a></p>
+<script src="http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/angular.js/1.5.8/angular.min.js"></script>
+<script src="http://cdn.bootcss.com/angular.js/1.5.8/angular-route.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/music.js"></script>
+<script src="js/player.js"></script>
+</body>
+</html>

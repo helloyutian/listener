@@ -1,0 +1,43 @@
+<link rel="stylesheet" type="text/css" href="css/list.css">
+    <header>
+      <div class="row">
+        <div class="col-xs-2"><a href="" class="iconfont back" ng-click="back()">&#xe610;</a></div>
+        <div class="col-xs-8 text-center">
+          <h1>默认列表</h1>
+        </div>
+      </div>
+    </header>
+    <div class="main">
+      <div class="main-top">
+        <div class="list-top">
+          <a href="" ng-click="playAll($event)"><i class="iconfont pull-right">&#xe601;</i>播放全部</a>
+        </div>
+        <!--<ul class="nav nav-pills nav-justified">-->
+          <!--<li><a class="collapse" href="#">ddd <span class="caret"></span></a></li>-->
+          <!--<li><a href="#">eee</a></li>-->
+        <!--</ul>-->
+      </div>
+      <div class="main-con">
+        <ul id="musicList">
+          <li ng-repeat="music in list" ng-click="cgMusic($index,$event)" ng-class="isPlaying($index)?'clearfix active':'clearfix'">
+            <button class="btn btn-default pull-right" >···</button>
+            <span class="pull-left">{{($index + 1)<10 ? '0'+($index+1) : $index + 1}}</span>
+            <h3>{{music.name}}</h3>
+            <p>{{getSinger(music.artists) || '未知'}}</p>
+            <div class="music-pic"><img class="img-responsive" ng-src="{{music.album.picUrl || music.artists[0].picUrl || 'img/i/skin_kg_playing_bar_default_avatar.png'}}"></div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+<div id="more" class="list-more" ng-click="hideMore($event)" ng-show="isShowMore">
+  <div class="more-con">
+    <ul>
+      <li ng-click="cgMusic(index,event)"><i class="iconfont">&#xe6bc;</i> 播放</li>
+      <li><i class="iconfont">&#xe604;</i> 喜欢</li>
+      <li ng-click="removeMusic()"><i class="iconfont">&#xe6b3;</i> 移除</li>
+    </ul>
+  </div>
+</div>
+<div class="alert" ng-show="isAlert">{{alertCon}}</div>

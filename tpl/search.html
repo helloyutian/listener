@@ -1,0 +1,63 @@
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.css">-->
+<link rel="stylesheet" type="text/css" href="css/search.css">
+<header>
+  <div class="row">
+    <div class="col-xs-10">
+      <form class="head-search">
+        <div class="has-feedback">
+          <input id="search" class="form-control" type="search" placeholder="{{def}}" autofocus ng-model="keyword" />
+          <span class="glyphicon glyphicon-search  form-control-feedback" ng-click="searchMusic(keyword)"></span>
+
+        </div>
+      </form>
+    </div>
+    <a class="col-xs-2" href="#/index">取消</a>
+  </div>
+</header>
+    <div class="main">
+      <!--默认内容-->
+      <div class="clearfix hot-link" ng-hide="isSearch">
+        <h2>热门搜索</h2>
+        <ul>
+          <li ng-repeat="hot in hotList" ng-click="searchMusic(hot)"><a href="javascript:;">{{hot}}</a></li>
+        </ul>
+      </div>
+      <div class="history" ng-hide="isSearch">
+        <ul>
+          <li ng-repeat="his in historys" ng-click="searchMusic(his)"><i class="iconfont pull-right">&#xe60b;</i><i class="iconfont">&#xe613;</i> {{his}}</li>
+        </ul>
+      </div>
+      <!--输入内容时显示的内容-->
+      <!--<datalist id="inputList">-->
+        <!--<option value="陈奕迅">陈奕迅</option>-->
+        <!--<option value="k歌之王">k歌之王</option>-->
+      <!--</datalist>-->
+      <!--搜索结果-->
+      <div class="main-top" ng-show="isSearch">
+        <p>共找到 {{songCount}} 个结果</p>
+
+      </div>
+      <div ng-show="isSearch" class="main-con result">
+        <ul id="musicList">
+          <li class="clearfix" ng-repeat="music in searchList" ng-click="cgMusic($index,$event)">
+            <button class="btn btn-default pull-right" >···</button>
+            <a class="add-def iconfont" href="">&#xe61d;</a>
+            <h3>{{music.name}}</h3>
+            <p>{{getSinger(music.artists) || '未知'}}</p>
+          </li>
+        </ul>
+        <p ng-show="isListEnd"></p>
+      </div>
+    </div>
+
+<div id="more" class="list-more active" ng-click="hideMore($event)" ng-show="isShowMore">
+  <div class="more-con">
+    <ul>
+      <li ng-click="cgMusic(index,event)"><i class="iconfont" ng-bind="isPlaying(index)?'&#xe607;':'&#xe6bc;'">&#xe6bc;</i> 播放</li>
+      <li><i class="iconfont">&#xe604;</i> 喜欢</li>
+      <li><i class="iconfont">&#xe61d;</i> 加入默认列表</li>
+
+    </ul>
+  </div>
+</div>
+<div class="alert" ng-show="isAlert">{{alertCon}}</div>

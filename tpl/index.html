@@ -1,0 +1,88 @@
+
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<header>
+  <div class="row">
+    <div class="col-xs-2"><a href="" id="logo"  class="logo" ng-click="setting()" title="logo"><img class="img-responsive" src="img/i/skin_img_navigation_logout_default.png"></a></div>
+    <div class="col-xs-10">
+      <form class="head-search">
+        <div class="has-feedback">
+          <input class="form-control" type="search" placeholder="孙燕姿 遇见" ng-focus="jump('/search')" />
+          <span class="glyphicon glyphicon-search  form-control-feedback"></span>
+        </div>
+      </form>
+    </div>
+    <!-- <div class="col-xs-8">
+      <ul class="row tabs">
+        <li class="col-xs-4 active"><a href="index.html">听</a></li>
+        <li class="col-xs-4"><a href="#">看</a></li>
+        <li class="col-xs-4"><a href="#">唱</a></li>
+      </ul>
+      <i class="nav-line"></i>
+    </div>
+    <div class="col-xs-2"><a class="search" href="#" title="search"><img class="img-responsive" src="img/i/skin_kg_comm_ic_main_top_search_normal.png" alt="search"></a></div> -->
+  </div>
+</header>
+<div class="row main">
+  <!-- 头部 -->
+  <div class="main-top">
+    <ul class="nav nav-pills nav-justified">
+      <li><a href="#/list"><i><img class="img-responsive" src="img/i/skin_kg_navigation_fav_normal.png"></i><p>我喜欢</p></a></li>
+      <li><a href=""><i><img class="img-responsive" src="img/i/skin_kg_navigation_playlist_normal.png"></i><p>歌单</p></a></li>
+      <li><a href=""><i><img class="img-responsive" src="img/i/skin_kg_navigation_download_normal.png"></i><p>下载</p></a></li>
+      <li><a href=""><i><img class="img-responsive" src="img/i/skin_kg_navigation_recent_normal.png"></i><p>最近</p></a></li>
+    </ul>
+    <a class="top-local" href="#/list">
+      <span class="pull-right">{{num}}首 <i class="ico"><img src="img/i/ec_.png"></i></span>
+      <span class="ico-phone"></span>默认列表 <span class="ico"><img src="img/i/skin_kg_navigation_random_normal.png"></span>
+    </a>
+  </div>
+
+  <!-- 内容 -->
+  <div class="main-con">
+    <div class="pindao">
+    <ul class="nav nav-pills nav-justified">
+      <li><a href=""><i><img class="img-responsive" src="img/i/skin_kg_navigation_yueku_normal.png"></i><p>乐库</p></a></li>
+      <li><a href=""><i><img class="img-responsive" src="img/i/skin_kg_navigation_channel_normal.png"></i><p>电台</p></a></li>
+      <li><a href=""><i><img class="img-responsive" src="img/i/skin_kg_navigation_kuchat_normal.png"></i><p>酷群</p></a></li>
+    </ul>
+    </div>
+    <div class="liebiao">
+      <dl>
+        <dt><a href="" data-toggle="collapse" data-target="#toolList"><span class="caret"></span><i class="iconfont">&#xe619;</i> <b>工具</b> </a></dt>
+        <dd id="toolList" class="collapse in">
+          <ul class="row">
+            <li class="col-xs-3"><a href=""><i><img class="img-responsive" src="img/i/egh.png"></i>传歌</a></li>
+            <li class="col-xs-3"><a href=""><i><img class="img-responsive" src="img/i/egc.png"></i>挑歌</a></li>
+            <li class="col-xs-3"><a href=""><i><img class="img-responsive" src="img/i/ege.png"></i>彩铃</a></li>
+            <li class="col-xs-3"><a href=""><i><img class="img-responsive" src="img/i/egd.png"></i>识曲</a></li>
+          </ul>
+        </dd>
+        <dt><a href=""><i class="iconfont">&#xe61a;</i> <b>游戏</b></a></dt>
+        <dt><span class="pull-right">音乐随时随地，酷狗蓝牙耳机</span><a href=""><i class="iconfont">&#xe615;</i> <b>推广</b></a></dt>
+      </dl>
+    </div>
+  </div>
+</div>
+<footer id="musicPlayer">
+  <div class="col-xs-3 col-sm-2 col-md-3" ng-click="jump('/music')">
+    <div class="music-head"><img id="musicImg" class="img-responsive" src=""></div>
+  </div>
+  <div class="col-xs-9 col-sm-10 col-md-9 music-info">
+    <div id="musicTime" class="music-time">
+      <div id="timeLine" class="time-line">
+        <div id="curTime" class="cur-time"><em></em><span>0:00</span></div>
+        <div id="overTime" class="over-time"></div>
+        <div id="preTime" class="pre-time"></div>
+      </div>
+    </div>
+    <div class="info-btm">
+      <div class="pull-right music-ctrl">
+        <a id="playBtn" href="" class="iconfont play">&#xe6bc;</a>
+        <a id="nextBtn" href="" class="iconfont next">&#xe608;</a>
+        <a id="showList" href="#/list" class="iconfont list">&#xe603;</a>
+      </div>
+      <h3 id="musicName" ng-click="jump('/music')"></h3>
+      <p id="musicSinger" ng-click="jump('/music')"></p>
+    </div>
+  </div>
+</footer>

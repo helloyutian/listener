@@ -1,0 +1,26 @@
+CACHE MANIFEST
+# version test
+http://cdn.bootcss.com/jquery/1.12.4/jquery.min.js 
+http://cdn.bootcss.com/angular.js/1.5.8/angular.min.js
+http://cdn.bootcss.com/angular.js/1.5.8/angular-route.min.js
+js/bootstrap.min.js 
+js/music.js
+js/player.js
+
+css/basic.css
+css/index.css
+css/bootstrap.min.css 
+
+img/iphone.png
+img/top.png
+img/i/axf.png
+img/i/eal.png
+img/i/eam.png
+img/i/f1r.png
+
+img/o/aa.mp3
+
+tpl/index.html
+
+NETWORK:
+*
