@@ -1,0 +1,50 @@
+
+<link rel="stylesheet" type="text/css" href="css/music.css">
+<div id="mark" class="row mark"></div>
+<header>
+  <div class="row">
+    <div class="col-xs-2"><a href="" class="iconfont back" ng-click="back()">&#xe610;</a></div>
+    <div class="col-xs-8 text-center">
+      <h2 id="musicName"></h2>
+      <p id="musicSinger"></p>
+    </div>
+    <div class="col-xs-2"><span> </span></div>
+  </div>
+</header>
+<div class="main">
+  <div class="main-warp clearfix">
+    <div class="main-con">
+    <ul id="mainLrc">
+      <li>没有找到匹配的歌词..</li>
+    </ul>
+    </div>
+  </div>
+</div>
+<footer id="musicPlayer">
+  <div id="musicTime" class="music-time">
+    <span>0:00</span>
+    <div id="timeLine" class="time-line">
+      <div id="curTime" class="cur-time"><em></em><span>0:00</span></div>
+      <div id="overTime" class="over-time"></div>
+      <div id="preTime" class="pre-time"></div>
+    </div>
+    <span>0:00</span>
+  </div>
+  <div class="row">
+    <div class="col-xs-2 text-center"><a id="playMode" class="iconfont a-btn" href="javascript:;">&#xe618;</a></div>
+    <div class="col-xs-8 foot-btn">
+      <a href="javascript:;" id="prevBtn" class="iconfont">&#xe602;</a><a href="javascript:;" id="playBtn" class="iconfont">&#xe6bc;</a><a href="javascript:;" id="nextBtn" class="iconfont">&#xe608;</a>
+    </div>
+    <div class="col-xs-2 text-center"><a id="showList" class="iconfont a-btn" href="#/list">&#xe603;</a></div>
+  </div>
+</footer>
+<div id="playList" class="play-list">
+  <ul>
+    <li class="clearfix" ng-repeat="music in musicList" id="{{music.mid}}">
+      <span class="pull-left">{{($index + 1)<10 ? '0'+$index : $index + 1}}</span>
+      <h3>{{music.mname}}</h3>
+      <p>{{music.sname || '未知'}}</p>
+    </li>
+  </ul>
+</div>
+
